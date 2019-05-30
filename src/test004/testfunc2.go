@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+/**
+  import优先
+
+  函数执行的顺序
+	1.全局变量
+	2.init()方法
+	3.main()方法
+*/
 func main() {
 
 	fmt.Println("sum = ", sum(10, 15, 20))
@@ -32,6 +40,9 @@ func sum(n1 int, args ...int) int {
 	return sum
 }
 
+/**
+更换指针所指向的地址
+*/
 func swap(n1 *int, n2 *int) (int, int) {
 
 	t := *n1
@@ -39,4 +50,27 @@ func swap(n1 *int, n2 *int) (int, int) {
 	*n2 = t
 
 	return *n1, *n2
+
+}
+
+/**
+在执行main方法前 会首先执行init进行初始化
+*/
+func init() {
+
+	fmt.Println("init 初始化 ~ ")
+
+}
+
+// 定义全局变量
+var age int = test()
+
+/**
+在执行test方法
+*/
+func test() int {
+
+	fmt.Println("全局变量赋值！")
+
+	return 100
 }
