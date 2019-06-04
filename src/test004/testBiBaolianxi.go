@@ -20,6 +20,7 @@ func main() {
 
 }
 
+// 闭包
 func judge(suffix string) func(string) string {
 
 	return func(name string) string {
