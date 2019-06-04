@@ -66,7 +66,7 @@ func init() {
 var age int = test()
 
 /**
-在执行test方法
+  在执行test方法
 */
 func test() int {
 
